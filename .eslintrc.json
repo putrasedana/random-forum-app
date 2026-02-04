@@ -1,0 +1,73 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "cypress/globals": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:cypress/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "cypress"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "react/react-in-jsx-scope": "off",
+    "comma-dangle": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.test.jsx",
+          "**/*.spec.jsx",
+          "**/cypress/**"
+        ]
+      }
+    ],
+    "no-use-before-define": "off",
+    "no-alert": "off",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "react/require-default-props": "off",
+    "object-curly-newline": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "operator-linebreak": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "arrow-body-style": "off",
+    "no-confusing-arrow": "off",
+    "react/function-component-definition": "off",
+    "linebreak-style": "off",
+
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "warn",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.cy.{js,jsx}", "cypress/**/*.{js,jsx}"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
