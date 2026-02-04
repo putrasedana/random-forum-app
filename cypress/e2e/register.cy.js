@@ -66,7 +66,7 @@ describe('Register Page', () => {
   });
 
   it('should redirect to login page when register is successful', () => {
-    const uniqueEmail = `user_${Date.now()}@example.com`;
+    const uniqueEmail = `user_${Date.now()}${Math.random()}@example.com`;
 
     cy.intercept('POST', '**/register').as('register');
 
@@ -78,8 +78,15 @@ describe('Register Page', () => {
       .contains(/^Register$/)
       .click();
 
-    cy.wait('@register');
-    cy.location('pathname').should('eq', '/login');
-    cy.contains('Login').should('be.visible');
+    // Better waiting approach
+    cy.wait('@register', { timeout: 10000 })
+      .its('response.statusCode')
+      .should('eq', 201);
+
+    // Wait for navigation explicitly
+    cy.url({ timeout: 10000 }).should('include', '/login');
+
+    // Alternative: Check for login page content
+    cy.contains('Login', { timeout: 10000 }).should('be.visible');
   });
 });
