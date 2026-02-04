@@ -16,11 +16,11 @@ function receiveUsersActionCreator(users) {
 function asyncRegisterUser({ name, email, password }) {
   return async () => {
     try {
-      await api.register({ name, email, password });
-      return { name, email, password };
+      const response = await api.register({ name, email, password });
+      return response;
     } catch (error) {
       alert(error.message);
-      return Promise.reject(error);
+      throw error;
     }
   };
 }
