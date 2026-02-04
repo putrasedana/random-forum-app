@@ -8,7 +8,8 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "plugin:storybook/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,7 +18,10 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "cypress"],
+  "plugins": [
+    "react",
+    "cypress"
+  ],
   "rules": {
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
@@ -49,7 +53,6 @@
     "no-confusing-arrow": "off",
     "react/function-component-definition": "off",
     "linebreak-style": "off",
-
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "warn",
     "cypress/assertion-before-screenshot": "warn",
@@ -63,7 +66,10 @@
   },
   "overrides": [
     {
-      "files": ["**/*.cy.{js,jsx}", "cypress/**/*.{js,jsx}"],
+      "files": [
+        "**/*.cy.{js,jsx}",
+        "cypress/**/*.{js,jsx}"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-unused-expressions": "off"
