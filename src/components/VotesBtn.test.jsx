@@ -32,7 +32,7 @@ describe('VotesBtn component', () => {
       />,
     );
 
-    expect(screen.getByTestId('mock-iconsq')).toBeInTheDocument();
+    expect(screen.getByTestId('mock-icon')).toBeInTheDocument();
     expect(screen.getByText('10')).toBeInTheDocument();
   });
 
