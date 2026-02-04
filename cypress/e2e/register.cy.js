@@ -68,6 +68,8 @@ describe('Register Page', () => {
   it('should redirect to login page when register is successful', () => {
     const uniqueEmail = `user_${Date.now()}@example.com`;
 
+    cy.intercept('POST', '**/register').as('register');
+
     cy.get('input[placeholder="Name"]').type('Test User');
     cy.get('input[placeholder="Email"]').type(uniqueEmail);
     cy.get('input[placeholder="Password"]').type('password123');
@@ -76,8 +78,8 @@ describe('Register Page', () => {
       .contains(/^Register$/)
       .click();
 
-    cy.location('pathname', { timeout: 10000 }).should('eq', '/login');
-
+    cy.wait('@register');
+    cy.location('pathname').should('eq', '/login');
     cy.contains('Login').should('be.visible');
   });
 });
