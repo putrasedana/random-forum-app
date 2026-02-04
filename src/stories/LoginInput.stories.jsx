@@ -26,7 +26,7 @@ export const Prefilled = {
   },
 };
 
-export const meta = {
+export const Meta = {
   component: LoginInput,
   tags: ['autodocs'],
 };

@@ -18,10 +18,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "cypress"
-  ],
+  "plugins": ["react", "cypress"],
   "rules": {
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
@@ -57,7 +54,9 @@
     "cypress/no-unnecessary-waiting": "warn",
     "cypress/assertion-before-screenshot": "warn",
     "cypress/no-force": "warn",
-    "cypress/no-async-tests": "error"
+    "cypress/no-async-tests": "error",
+    "no-underscore-dangle": "off",
+    "no-console": "off"
   },
   "settings": {
     "react": {
@@ -66,10 +65,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.cy.{js,jsx}",
-        "cypress/**/*.{js,jsx}"
-      ],
+      "files": ["**/*.cy.{js,jsx}", "cypress/**/*.{js,jsx}"],
       "rules": {
         "import/no-extraneous-dependencies": "off",
         "no-unused-expressions": "off"

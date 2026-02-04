@@ -1,6 +1,6 @@
 import { MemoryRouter } from 'react-router-dom';
-import Navigation from '../components/Navigation';
 import { useArgs } from 'storybook/internal/preview-api';
+import Navigation from '../components/Navigation';
 
 export default {
   title: 'Layout/Navigation',
@@ -50,11 +50,11 @@ export const LoggedInInteractive = {
       updateArgs({ authUser: null });
     };
 
-    return <Navigation {...args} signOut={handleSignOut} />;
+    return <Navigation authUser={args.authUser} signOut={handleSignOut} />;
   },
 };
 
-export const meta = {
+export const Meta = {
   component: Navigation,
   tags: ['autodocs'],
 };

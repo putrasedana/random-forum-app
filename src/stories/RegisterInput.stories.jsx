@@ -30,7 +30,7 @@ export const Prefilled = {
   },
 };
 
-export const meta = {
+export const Meta = {
   component: RegisterInput,
   tags: ['autodocs'],
 };
