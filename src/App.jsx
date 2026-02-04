@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className="bg-slate-100 h-full w-full">
       <header className="bg-indigo-600 text-white px-6 py-4 ">
-        <h1 className="text-3xl">Random Forum App</h1>
+        <h1 className="text-3xl">Random Forum App.</h1>
       </header>
 
       <Loading />
