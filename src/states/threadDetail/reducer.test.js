@@ -11,7 +11,7 @@
  *  - should return the thread detail with the new comment when given by CREATE_COMMENT action
  *  - should return the thread detail with up-voted comment when given by UP_VOTE_COMMENT action
  *  - should return the thread detail with down-voted comment when given by DOWN_VOTE_COMMENT action
- *  - should return the thread detail with neutralized comment when given by NEUTRALIZE_COMMENT action
+ *  - should return the thread detail with neutralized comment when given by NEUTRALIZE_COMMENT
  *
  */
 

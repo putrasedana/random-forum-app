@@ -58,7 +58,7 @@ describe('VotesBtn component', () => {
       <VotesBtn
         handleClick={() => {}}
         count={3}
-        hasVoted={true}
+        hasVoted
         icon={MockIcon}
         votedColor="text-red-500"
       />,
